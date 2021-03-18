@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component'
 import { ROUTES } from './app.routes';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
+import { RestauranteComponent } from './restaurantes/restaurante/restaurante.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RestaurantesComponent } from './restaurantes/restaurantes.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    RestaurantesComponent
+    RestaurantesComponent,
+    RestauranteComponent
   ],
 
   imports: [
