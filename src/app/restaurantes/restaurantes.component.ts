@@ -1,3 +1,4 @@
+import { RestauranteServices } from './restaurentes.service';
 import { Restaurante } from './restaurante/Restaurante.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,40 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantesComponent implements OnInit {
 
-  restaurantes: Restaurante[] = [
-    {
-      id: "bread-bakery",
-      name: "Bread & Bakery",
-      category: "Bakery",
-      deliveryEstimate: "25m",
-      rating: 4.9,
-      imagePath: "assets/img/restaurants/breadbakery.png",
-   
+  restaurantes: Restaurante[] = [];
 
-    },
-    {
-      id: "burger-house",
-      name: "Burger House",
-      category: "Hamburgers",
-      deliveryEstimate: "100m",
-      rating: 3.5,
-      imagePath: "assets/img/restaurants/burgerhouse.png",
-    
-    },
-    {
-      id: "coffee-corner",
-      name: "Coffee Corner",
-      category: "Coffee Shop",
-      deliveryEstimate: "30-40m",
-      rating: 4.8,
-      imagePath: "assets/img/restaurants/coffeecorner.png",
+  constructor(
+    private restauranteServices: RestauranteServices
 
-    },
-  ];
-
-  constructor() { }
+  ) { }
 
   ngOnInit() {
+
+    this.restaurantes = this.restauranteServices.getAllRestaurantes();
 
   }
 

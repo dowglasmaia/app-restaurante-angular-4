@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component'
 import { ROUTES } from './app.routes';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RestauranteComponent } from './restaurantes/restaurante/restaurante.component';
+import { RestauranteServices } from './restaurantes/restaurentes.service';
 
 
 @NgModule({
@@ -26,10 +27,12 @@ import { RestauranteComponent } from './restaurantes/restaurante/restaurante.com
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    
-    
+
+
   ],
-  providers: [],
+  providers: [
+    RestauranteServices
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
