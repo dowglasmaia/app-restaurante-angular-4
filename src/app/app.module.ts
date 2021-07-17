@@ -1,3 +1,4 @@
+import { Http, HttpModule } from '@angular/http';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { ROUTES } from './app.routes';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RestauranteComponent } from './restaurantes/restaurante/restaurante.component';
 import { RestauranteServices } from './restaurantes/restaurentes.service';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -25,11 +27,14 @@ import { RestauranteServices } from './restaurantes/restaurentes.service';
   ],
 
   imports: [
+    CommonModule,
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(ROUTES),
 
 
   ],
+
   providers: [
     RestauranteServices
   ],

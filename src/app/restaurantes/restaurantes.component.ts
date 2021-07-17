@@ -17,8 +17,13 @@ export class RestaurantesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.restaurantes = this.restauranteServices.getAllRestaurantes();
+    this.obterRestaurantes();
 
+  }
+
+  private obterRestaurantes() {
+    this.restauranteServices.obterRestaurantes().subscribe(
+      restaurantes => this.restaurantes = restaurantes);
   }
 
 }
