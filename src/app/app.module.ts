@@ -1,3 +1,4 @@
+import { RestauranteAvaliacaoComponent } from './restaurantes/restaurante-avaliacao/restaurante-avaliacao.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -31,7 +32,8 @@ import { RestaurantesDatalhesComponent } from './restaurantes/restaurantes-datal
     RestaurantesDatalhesComponent,
     RestauranteDatalheMenuComponent ,
     RestauranteCarrinhoComprasComponent,
-    RestauranteMenuItemComponent
+    RestauranteMenuItemComponent,
+    RestauranteAvaliacaoComponent
   ],
 
   imports: [

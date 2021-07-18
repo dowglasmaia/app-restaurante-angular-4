@@ -40,14 +40,15 @@
 
          <!-- /.box-body -->
          <div class="box-footer detail-footer">
-           <a class="pull-left detail-active" href="detail-restaurant.html">
+           <a class="pull-left " [routerLink]="['menu']" routerLinkActive="detail-active">
              Menu
            </a>
-           <a class="pull-right" href="detail-restaurant-reviews.html">
+
+           <a class="pull-right" [routerLink]="['avaliacao']" routerLinkActive="detail-active">
              Avaliações
            </a>
-         </div>
 
+         </div>
        </div>
      </div>
      <!-- /.col-xs-12 -->
@@ -55,8 +56,8 @@
 
 
    <div class="row">
-     <!-- MENU -->
-     <mt-restaurante-datalhe-menu></mt-restaurante-datalhe-menu>
+     <!-- ROTAS FILHAS  -->
+     <router-outlet> </router-outlet>
    </div>
 
  </section>

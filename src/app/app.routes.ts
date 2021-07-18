@@ -1,5 +1,7 @@
-import { RestaurantesComponent } from './restaurantes/restaurantes.component';
+import { RestauranteDatalheMenuComponent } from './restaurantes/restaurante-datalhe-menu/restaurante-datalhe-menu.component';
 import { Routes } from "@angular/router";
+import { RestauranteAvaliacaoComponent } from './restaurantes/restaurante-avaliacao/restaurante-avaliacao.component';
+import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -7,11 +9,18 @@ import { RestaurantesDatalhesComponent } from './restaurantes/restaurantes-datal
 
 export const ROUTES: Routes = [
 
-    { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
 
-    { path: 'restaurantes', component: RestaurantesComponent },
+  { path: 'restaurantes', component: RestaurantesComponent },
 
-    { path: 'restaurantes/:id', component: RestaurantesDatalhesComponent },
+  {
+    path: 'restaurantes/:id', component: RestaurantesDatalhesComponent,
+    children: [
+      { path: '', redirectTo: 'menu', pathMatch: 'full' },
+      { path: 'menu', component: RestauranteDatalheMenuComponent },
+      { path: 'avaliacao', component: RestauranteAvaliacaoComponent }
+    ]
+  },
 
-    { path: 'about', component: AboutComponent },
-  ]
+  { path: 'about', component: AboutComponent },
+]
