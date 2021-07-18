@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { URI_SERVER_API } from "app/app.api";
 
-import { Restaurante } from "./restaurante/Restaurante.model";
+import { Restaurante } from "../restaurantes/restaurante/restaurante.model";
 import { ErrorHandler } from "app/app.error-handler";
 
 import { Observable } from "rxjs/Observable";
@@ -21,6 +21,12 @@ export class RestauranteServices {
 
   public obterRestaurantePorId(id: string): Observable<Restaurante> {
     return this.http.get(`${URI_SERVER_API}/restaurants/${id}`)
+      .map((response) => response.json())
+      .catch(ErrorHandler.handlerError);
+  }
+
+  public obterAvaliacoesDeRestaurantePorId(id: string): Observable<any> {
+    return this.http.get(`${URI_SERVER_API}/restaurants/${id}/reviews`)
       .map((response) => response.json())
       .catch(ErrorHandler.handlerError);
   }

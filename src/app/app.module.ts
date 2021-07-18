@@ -17,7 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component'
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RestauranteComponent } from './restaurantes/restaurante/restaurante.component';
-import { RestauranteServices } from './restaurantes/restaurentes.service';
+import { RestauranteServices } from './services/restaurentes.service';
 import { RestaurantesDatalhesComponent } from './restaurantes/restaurantes-datalhes/restaurantes-datalhes.component';
 
 
