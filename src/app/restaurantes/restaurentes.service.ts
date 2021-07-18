@@ -13,7 +13,7 @@ import "rxjs/add/operator/catch";
 export class RestauranteServices {
   constructor(private http: Http) { }
 
-  obterRestaurantes(): Observable<Restaurante[]> {
+  public obterRestaurantes(): Observable<Restaurante[]> {
     return this.http.get(`${URI_SERVER_API}/restaurants`)
       .map((response) => response.json())
       .catch(ErrorHandler.handlerError);
